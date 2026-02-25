@@ -1,26 +1,32 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @theme {
+  --color-primary: #1B5E20;
+  --color-secondary: #66BB6A;
+  --color-background: #F1F8E9;
+  --color-accent: #C8A951;
+  --color-cream: #F1F8E9;
+
+  /* Aliases for homepage components */
   --color-ayur-deep: #1B5E20;
   --color-ayur-light: #66BB6A;
-  --color-ayur-cream: #F1F8E9;
   --color-ayur-gold: #C8A951;
+
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
 
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
-
-  --radius-2xl: 1.5rem;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--color-ayur-cream);
-  color: theme('colors.gray.900');
+  background-color: var(--color-background);
+  color: #2D3748;
   font-family: var(--font-sans);
 }
 
@@ -35,10 +41,32 @@ h6 {
 
 @layer components {
   .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm transition-all duration-300;
   }
 
-  .transition-smooth {
-    @apply transition-all duration-300 ease-in-out;
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-primary/10 hover:text-primary transition-all duration-200;
   }
+
+  .nav-link-active {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white shadow-lg shadow-primary/20 transition-all duration-200;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0;
 }
