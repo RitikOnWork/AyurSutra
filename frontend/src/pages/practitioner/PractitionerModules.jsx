@@ -20,7 +20,6 @@ const DefaultIcon = (
 );
 
 export const PatientManagement = () => <PlaceholderPage title="Manage Patients" icon={DefaultIcon} />;
-export const TherapyScheduler = () => <PlaceholderPage title="Therapy Scheduler" icon={DefaultIcon} />;
 export const TherapyTracking = () => <PlaceholderPage title="Live Therapy Tracking" icon={DefaultIcon} />;
 export const Reports = () => <PlaceholderPage title="Reports & Analytics" icon={DefaultIcon} />;
 export const Settings = () => <PlaceholderPage title="Settings & Preferences" icon={DefaultIcon} />;

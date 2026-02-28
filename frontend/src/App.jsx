@@ -11,13 +11,15 @@ import PatientDashboard from './pages/patient/PatientDashboard';
 import MyTherapies from './pages/patient/MyTherapies';
 import Notifications from './pages/patient/Notifications';
 import Feedback from './pages/patient/Feedback';
+import OnlineConsultation from './pages/patient/OnlineConsultation';
 
 // Practitioner Pages
 import PractitionerDashboard from './pages/practitioner/PractitionerDashboard';
 import PatientManagement from './pages/practitioner/PatientManagement';
 import Settings from './pages/practitioner/Settings';
+import TherapyScheduler from './pages/practitioner/TherapyScheduler';
+import PrakritiAssessment from './pages/practitioner/PrakritiAssessment';
 import {
-  TherapyScheduler,
   TherapyTracking,
   Reports
 } from './pages/practitioner/PractitionerModules';
@@ -45,6 +47,7 @@ function App() {
             <Route path="therapies" element={<MyTherapies />} />
             <Route path="notifications" element={<Notifications />} />
             <Route path="feedback" element={<Feedback />} />
+            <Route path="consultation" element={<OnlineConsultation />} />
           </Route>
 
           {/* Practitioner Routes */}
@@ -59,6 +62,7 @@ function App() {
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<PractitionerDashboard />} />
             <Route path="patients" element={<PatientManagement />} />
+            <Route path="assessment" element={<PrakritiAssessment />} />
             <Route path="scheduler" element={<TherapyScheduler />} />
             <Route path="tracking" element={<TherapyTracking />} />
             <Route path="reports" element={<Reports />} />
