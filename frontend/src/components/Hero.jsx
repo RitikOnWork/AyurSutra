@@ -1,86 +1,95 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button from './ui/Button';
 
 const Hero = () => {
     return (
-        <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-            {/* Decorative Orbs */}
-            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-ayur-light/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-ayur-gold/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+        <section className="relative min-h-[90vh] lg:min-h-screen bg-mesh flex items-center pt-24 lg:pt-20 overflow-hidden">
+            {/* Decorative Elements */}
+            <div className="absolute top-1/4 -left-20 w-64 lg:w-96 h-64 lg:h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-soft"></div>
+            <div className="absolute bottom-1/4 -right-20 w-64 lg:w-96 h-64 lg:h-96 bg-accent/5 rounded-full blur-3xl animate-pulse-soft"></div>
 
-            <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
-                    <div className="inline-block px-4 py-1.5 bg-ayur-light/10 text-ayur-deep font-semibold rounded-full border border-ayur-light/20">
-                        Digital Ayurveda Revolution
-                    </div>
-                    <h1 className="text-5xl md:text-7xl leading-tight text-ayur-deep font-bold">
-                        Digitizing <span className="text-ayur-gold">Panchakarma</span> with Authentic Care
-                    </h1>
-                    <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-                        Automated therapy scheduling, patient notifications and real-time recovery tracking – all in one platform. Empower your clinic with the wisdom of the past and the technology of the future.
-                    </p>
-                    <div className="flex flex-wrap gap-4">
-                        <button className="bg-ayur-deep text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-ayur-deep/20 hover:bg-ayur-light hover:scale-105 transition-smooth">
-                            Get Started Now
-                        </button>
-                        <button className="bg-white text-ayur-deep border-2 border-ayur-deep/10 px-8 py-4 rounded-2xl font-bold hover:bg-ayur-deep/5 transition-smooth">
-                            Book Demo
-                        </button>
-                    </div>
-                    <div className="flex items-center gap-6 pt-4">
-                        <div className="flex -space-x-3">
-                            {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                                    <img src={`https://i.pravatar.cc/150?u=${i + 10}`} alt="User" />
-                                </div>
-                            ))}
-                            <div className="w-12 h-12 rounded-full border-2 border-white bg-ayur-gold flex items-center justify-center text-white text-xs font-bold">
-                                +2k
+            <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <div className="relative z-10 space-y-8 lg:space-y-12 text-center lg:text-left order-2 lg:order-1 lg:col-span-5">
+                    <div className="space-y-6">
+                        <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/50 shadow-sm animate-in fade-in slide-in-from-left duration-700 mx-auto lg:mx-0">
+                            <span className="flex h-2 w-2 rounded-full bg-secondary"></span>
+                            <span className="text-[10px] lg:text-xs font-bold text-primary uppercase tracking-[0.2em]">Next-Gen Ayurveda Platform</span>
+                        </div>
+
+                        <div className="flex flex-col gap-1 lg:gap-2 animate-in fade-in slide-in-from-bottom duration-1000">
+                            <div className="flex items-center gap-4 justify-center lg:justify-start">
+                                <span className="hidden lg:block w-12 h-px bg-primary/20"></span>
+                                <span className="text-xl lg:text-2xl font-bold text-primary uppercase tracking-[0.4em]">Healing</span>
+                            </div>
+                            <h1 className="text-5xl sm:text-6xl lg:text-9xl font-serif font-bold text-gray-800 leading-[1] tracking-tight">
+                                <span className="text-gradient">Ancient</span> <br />
+                                <span>Roots</span>
+                            </h1>
+                            <div className="flex items-center gap-4 justify-center lg:justify-start">
+                                <span className="text-lg lg:text-2xl font-medium text-gray-500 italic font-serif">for Modern Minds</span>
+                                <span className="hidden lg:block w-24 h-px bg-primary/10"></span>
                             </div>
                         </div>
-                        <p className="text-sm text-gray-500">
-                            Trusted by <strong>500+ clinics</strong> worldwide
-                        </p>
+                    </div>
+
+                    <p className="text-base lg:text-lg text-gray-500 max-w-xl leading-relaxed animate-in fade-in slide-in-from-bottom delay-200 duration-1000 mx-auto lg:mx-0 font-medium">
+                        AyurSutra harmonizes traditional Panchakarma wisdom with clinical precision.
+                        A sanctuary for practitioners and seekers of holistic vitality.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-2 animate-in fade-in slide-in-from-bottom delay-300 duration-1000 justify-center lg:justify-start">
+                        <Link to="/login" className="w-full sm:w-auto">
+                            <Button className="w-full h-14 lg:h-16 px-12 rounded-2xl text-lg font-bold shadow-2xl shadow-primary/30 hover:shadow-primary/40 transition-shadow">
+                                Begin Your Journey
+                            </Button>
+                        </Link>
+                        <button className="w-full sm:w-auto h-14 lg:h-16 px-10 rounded-2xl border-2 border-primary/20 bg-white/50 backdrop-blur-sm text-primary font-bold hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 group">
+                            Explore Wellness
+                            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-8 pt-10 border-t border-gray-100 animate-in fade-in duration-1000 delay-500">
+                        <div className="text-center lg:text-left">
+                            <p className="text-2xl lg:text-3xl font-bold text-gray-800">5k+</p>
+                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Lives Healed</p>
+                        </div>
+                        <div className="hidden sm:block h-10 w-px bg-gray-100"></div>
+                        <div className="text-center lg:text-left">
+                            <p className="text-2xl lg:text-3xl font-bold text-gray-800">120+</p>
+                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Certified Vaidyas</p>
+                        </div>
+                        <div className="hidden sm:block h-10 w-px bg-gray-100"></div>
+                        <div className="flex -space-x-3">
+                            {[1, 2, 3, 4].map((i) => (
+                                <div key={i} className="w-8 lg:w-10 h-8 lg:h-10 rounded-full border-2 border-white bg-sage-light flex items-center justify-center overflow-hidden shadow-sm">
+                                    <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i * 123}`} className="w-full h-full object-cover" alt="User" />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
-                <div className="relative">
-                    <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                        <img
-                            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
-                            alt="Ayurveda Wellness"
-                            className="w-full h-auto object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-ayur-deep/40 to-transparent"></div>
-                    </div>
+                <div className="relative order-1 lg:order-2 px-4 sm:px-10 lg:px-0 lg:col-span-12 xl:col-span-7">
+                    <div className="relative z-10 animate-in fade-in zoom-in duration-1000">
+                        <div className="w-full aspect-[16/10] bg-sage-light rounded-[3rem] lg:rounded-[4rem] shadow-2xl overflow-hidden shadow-primary/20 relative group border-4 border-white transform hover:rotate-1 transition-transform duration-700">
+                            <img
+                                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90"
+                                alt="Ayurvedic Treatment"
+                            />
+                            {/* Improved gradient for better visibility */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
 
-                    {/* Floating Stats Car */}
-                    <div className="absolute -bottom-6 -left-6 z-20 bg-white p-6 rounded-2xl shadow-2xl glass-card animate-bounce-slow">
-                        <div className="flex items-center gap-4">
-                            <div className="p-3 bg-ayur-light/20 rounded-xl">
-                                <svg className="w-6 h-6 text-ayur-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p className="text-sm font-semibold text-gray-500">Therapy Efficiency</p>
-                                <p className="text-2xl font-bold text-ayur-deep">+85%</p>
-                            </div>
+
                         </div>
                     </div>
 
-                    <div className="absolute -top-6 -right-6 z-20 bg-white p-6 rounded-2xl shadow-2xl glass-card">
-                        <div className="flex items-center gap-4">
-                            <div className="p-3 bg-ayur-gold/20 rounded-xl">
-                                <svg className="w-6 h-6 text-ayur-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p className="text-sm font-semibold text-gray-500">Active Patients</p>
-                                <p className="text-2xl font-bold text-ayur-deep">12,450</p>
-                            </div>
-                        </div>
-                    </div>
+                    {/* Background Decorative Rings */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-primary/10 rounded-full animate-spin-slow pointer-events-none hidden sm:block"></div>
                 </div>
             </div>
         </section>

@@ -1,91 +1,78 @@
 import React from 'react';
+import Card from './ui/Card';
 
 const Features = () => {
     const features = [
         {
-            title: "Automated Therapy Scheduling",
-            desc: "Intelligent algorithm that manages rooms, therapists, and patient cycles automatically.",
+            title: "Dynamic Scheduling",
+            description: "Intelligent Panchakarma treatment sequences that adapt to patient recovery rates.",
             icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-            )
+            ),
+            color: "bg-blue-50 text-blue-600"
         },
         {
-            title: "Pre & Post Procedure Notification System",
-            desc: "Automatically send dietary and lifestyle guidelines to patients before and after therapies.",
+            title: "Practitioner Portal",
+            description: "High-fidelity dashboard for managing dossiers, treatment logs, and clinical analytics.",
             icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-            )
+            ),
+            color: "bg-green-50 text-green-600"
         },
         {
-            title: "Real-Time Therapy Tracking",
-            desc: "Monitor ongoing sessions and therapist availability in real-time through a live dashboard.",
+            title: "Wellness Sanctuary",
+            description: "Patient-centric mobile experience for tracking vitality scores and therapy routines.",
             icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
-            )
+            ),
+            color: "bg-red-50 text-red-600"
         },
         {
-            title: "Visualization Dashboard",
-            desc: "Analytical insights into patient recovery trends, clinic revenue, and therapy performance.",
+            title: "Precise Analytics",
+            description: "Comprehensive reporting on therapy completion and long-term health trends.",
             icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
-            )
-        },
-        {
-            title: "Integrated Patient Feedback Loop",
-            desc: "Digital surveys to capture immediate post-therapy experiences for better care quality.",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                </svg>
-            )
-        },
-        {
-            title: "Customizable Notification Channels",
-            desc: "Stay connected through SMS, Email, and In-app notifications tailored to your preference.",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-            )
+            ),
+            color: "bg-gold/10 text-gold"
         }
     ];
 
     return (
-        <section id="features" className="py-24 bg-ayur-cream/50">
-            <div className="container mx-auto px-6">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-ayur-deep mb-6">
-                        Core Platform Features
-                    </h2>
-                    <p className="text-lg text-gray-600">
-                        A comprehensive suite of tools designed specifically for the nuanced needs of Ayurvedic Panchakarma therapy.
-                    </p>
+        <section id="solutions" className="py-20 lg:py-32 bg-white relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-6 lg:px-10">
+                <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24 space-y-4 lg:space-y-6">
+                    <h2 className="text-xs lg:text-sm font-bold text-primary uppercase tracking-[0.3em] font-sans">Our Core Ecosystem</h2>
+                    <h3 className="text-3xl lg:text-5xl font-serif font-bold text-gray-800">Designed for Clinical <span className="text-gradient italic">Excellence</span></h3>
+                    <p className="text-base lg:text-lg text-gray-500 font-medium px-4 lg:px-0">AyurSutra bridges the gap between ancient healing protocols and digital-first healthcare management.</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {features.map((feature, index) => (
-                        <div
-                            key={index}
-                            className="p-8 rounded-3xl bg-white border border-ayur-light/10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-smooth"
-                        >
-                            <div className="w-16 h-16 bg-ayur-light/10 rounded-2xl flex items-center justify-center text-ayur-deep mb-6">
-                                {feature.icon}
-                            </div>
-                            <h3 className="text-xl font-bold text-ayur-deep mb-4">
-                                {feature.title}
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed">
-                                {feature.desc}
-                            </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    {features.map((f, i) => (
+                        <div key={i} className="group relative">
+                            <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-[0.02] transition-opacity rounded-[2.5rem] lg:rounded-[3rem]"></div>
+                            <Card className="p-8 lg:p-10 border-gray-100 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 rounded-[2.5rem] lg:rounded-[3rem] h-full flex flex-col justify-between">
+                                <div className="space-y-4 lg:space-y-6">
+                                    <div className={`w-14 h-14 lg:w-16 lg:h-16 rounded-2xl ${f.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                                        <div className="scale-75 lg:scale-100">{f.icon}</div>
+                                    </div>
+                                    <h4 className="text-xl font-bold text-gray-800 font-serif">{f.title}</h4>
+                                    <p className="text-gray-500 leading-relaxed text-sm">{f.description}</p>
+                                </div>
+                                <button className="mt-8 lg:mt-10 flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest opacity-100 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                    Learn More
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </button>
+                            </Card>
                         </div>
                     ))}
                 </div>

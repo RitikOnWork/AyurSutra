@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
@@ -8,17 +9,25 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('patient');
     const navigate = useNavigate();
+    const { login } = useAuth();
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // No actual authentication logic for now
-        console.log('Logging in with:', { email, password, role });
 
-        // Switch to appropriate dashboard (for now only patient exists)
-        if (role === 'patient') {
-            navigate('/patient/dashboard');
+        // Mock User Data
+        const userData = {
+            id: 'AS-1001',
+            name: role === 'practitioner' ? 'Dr. Arjun Gupta' : 'Ritik Kumar',
+            email: email,
+            role: role
+        };
+
+        login(userData);
+
+        if (role === 'practitioner') {
+            navigate('/practitioner/dashboard');
         } else {
-            alert('Practitioner dashboard coming soon! For now, please login as Patient.');
+            navigate('/patient/dashboard');
         }
     };
 
@@ -29,7 +38,7 @@ const Login = () => {
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-2xl shadow-xl shadow-primary/20 mb-4">
                         <span className="text-white font-serif text-3xl font-bold">A</span>
                     </div>
-                    <h1 className="text-3xl font-bold text-gray-800">Welcome Back</h1>
+                    <h1 className="text-3xl font-bold font-serif text-gray-800">Welcome Back</h1>
                     <p className="text-gray-500 mt-2 font-medium">Continue your healing journey with AyurSutra</p>
                 </div>
 
@@ -42,8 +51,8 @@ const Login = () => {
                                     type="button"
                                     onClick={() => setRole('patient')}
                                     className={`py-3 px-4 rounded-xl border-2 transition-all font-bold text-sm ${role === 'patient'
-                                            ? 'border-primary bg-primary/5 text-primary'
-                                            : 'border-gray-100 bg-white text-gray-500 hover:border-gray-200'
+                                        ? 'border-primary bg-primary/5 text-primary'
+                                        : 'border-gray-100 bg-white text-gray-500 hover:border-gray-200'
                                         }`}
                                 >
                                     Patient
@@ -52,8 +61,8 @@ const Login = () => {
                                     type="button"
                                     onClick={() => setRole('practitioner')}
                                     className={`py-3 px-4 rounded-xl border-2 transition-all font-bold text-sm ${role === 'practitioner'
-                                            ? 'border-primary bg-primary/5 text-primary'
-                                            : 'border-gray-100 bg-white text-gray-500 hover:border-gray-200'
+                                        ? 'border-primary bg-primary/5 text-primary'
+                                        : 'border-gray-100 bg-white text-gray-500 hover:border-gray-200'
                                         }`}
                                 >
                                     Practitioner
@@ -62,7 +71,7 @@ const Login = () => {
                         </div>
 
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-700 ml-1">Email Address</label>
+                            <label className="text-sm font-bold text-gray-700 ml-1 font-sans">Email Address</label>
                             <input
                                 type="email"
                                 value={email}
@@ -74,7 +83,7 @@ const Login = () => {
                         </div>
 
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-700 ml-1">Password</label>
+                            <label className="text-sm font-bold text-gray-700 ml-1 font-sans">Password</label>
                             <input
                                 type="password"
                                 value={password}
@@ -90,7 +99,7 @@ const Login = () => {
                                 <input type="checkbox" className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary" />
                                 <span className="text-sm text-gray-500 group-hover:text-gray-700 transition-colors">Remember me</span>
                             </label>
-                            <button type="button" className="text-sm font-bold text-primary hover:text-secondary transition-colors">
+                            <button type="button" className="text-sm font-bold text-primary hover:text-secondary transition-colors font-sans">
                                 Forgot Password?
                             </button>
                         </div>
@@ -101,7 +110,7 @@ const Login = () => {
                     </form>
                 </Card>
 
-                <p className="text-center mt-8 text-gray-500 text-sm font-medium">
+                <p className="text-center mt-8 text-gray-500 text-sm font-medium font-sans">
                     Don't have an account?{' '}
                     <button className="text-primary font-bold hover:underline">Request Access</button>
                 </p>
@@ -109,7 +118,7 @@ const Login = () => {
                 <div className="mt-10 text-center">
                     <button
                         onClick={() => navigate('/')}
-                        className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 mx-auto text-sm font-bold"
+                        className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 mx-auto text-sm font-bold font-sans"
                     >
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
